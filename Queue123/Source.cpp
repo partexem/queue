@@ -10,13 +10,15 @@ int main() {
 	using namespace std;
 	setlocale(LC_ALL, "Russian");
 
-	srand(static_cast<unsigned int>(time(0)));
+	srand(time(NULL));
 	int value;
-	int id = 1;//счетчик задач 
+	int id = 1;
 	int ignor = 0;
 	int dinamo = 0;
 	bool isFirstTask = true;
 	int taskInQueue = 1;
+
+	int current = 1;
 
 	cout << "Введите размер очереди \n";
 	cin >> value;
@@ -62,7 +64,7 @@ int main() {
 			{
 				isFirstTask = false;
 				myQueue.getElement();
-				cout << " выполняет задачу." << endl;
+				cout<< " выполняет задачу " << current++ << endl;
 			}
 			else
 			{
@@ -73,6 +75,7 @@ int main() {
 		else
 		{
 			cout << "Процессор занят выполнением предыдущей задачи." << endl;
+
 		}
 
 
